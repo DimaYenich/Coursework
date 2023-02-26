@@ -13,7 +13,7 @@ namespace Coursework
 {
     public partial class mainForm : Form
     {
-        static public string currentUser;
+        static public string currentUser = null;
         public mainForm()
         {
             InitializeComponent();
@@ -22,6 +22,12 @@ namespace Coursework
 
         }
 
+        private void StartTest()
+        {
+            this.Hide();
+            testForm test = new testForm();
+            test.Show();
+        }
         //Подія кнопки яка починає тест
         private void button1_Click(object sender, EventArgs e)
         {
@@ -30,9 +36,7 @@ namespace Coursework
             {
                 currentUser = inputName.Text;
                 inputName.Clear();
-                this.Hide();
-                testForm test = new testForm();
-                test.Show();
+                StartTest();
             }
             else
                 MessageBox.Show("Поле імені не може бути пустим та має містити в собі мінімум 2 символи. ","Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -48,10 +52,6 @@ namespace Coursework
 
         }
 
-        private void label1_MouseHover(object sender, EventArgs e)
-        {
-
-        }
 
         private void exitButton_MouseHover(object sender, EventArgs e)
         {
@@ -76,8 +76,13 @@ namespace Coursework
                 MessageBox.Show("Список порожній!","Результати");
                 return;
             }
-
             MessageBox.Show(resoults,"Результати");
+        }
+
+        //Пройти тест без вводу імені
+        private void withoutNameLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StartTest();
         }
     }
 }

@@ -32,12 +32,15 @@
             this.exitButton = new System.Windows.Forms.Label();
             this.answerTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.answButton1 = new System.Windows.Forms.RadioButton();
+            this.answButton2 = new System.Windows.Forms.RadioButton();
+            this.answButton3 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // questionLabel
             // 
             this.questionLabel.BackColor = System.Drawing.Color.White;
-            this.questionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.questionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.questionLabel.Enabled = false;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.questionLabel.Location = new System.Drawing.Point(12, 27);
@@ -78,16 +81,59 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(516, 61);
             this.button1.TabIndex = 7;
+            this.button1.TabStop = false;
             this.button1.Text = "Далі";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // answButton1
+            // 
+            this.answButton1.AutoSize = true;
+            this.answButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.answButton1.Location = new System.Drawing.Point(12, 118);
+            this.answButton1.Name = "answButton1";
+            this.answButton1.Size = new System.Drawing.Size(140, 29);
+            this.answButton1.TabIndex = 8;
+            this.answButton1.TabStop = true;
+            this.answButton1.Text = "radioButton1";
+            this.answButton1.UseVisualStyleBackColor = true;
+            this.answButton1.Visible = false;
+            // 
+            // answButton2
+            // 
+            this.answButton2.AutoSize = true;
+            this.answButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.answButton2.Location = new System.Drawing.Point(195, 118);
+            this.answButton2.Name = "answButton2";
+            this.answButton2.Size = new System.Drawing.Size(140, 29);
+            this.answButton2.TabIndex = 9;
+            this.answButton2.TabStop = true;
+            this.answButton2.Text = "radioButton1";
+            this.answButton2.UseVisualStyleBackColor = true;
+            this.answButton2.Visible = false;
+            // 
+            // answButton3
+            // 
+            this.answButton3.AutoSize = true;
+            this.answButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.answButton3.Location = new System.Drawing.Point(388, 118);
+            this.answButton3.Name = "answButton3";
+            this.answButton3.Size = new System.Drawing.Size(140, 29);
+            this.answButton3.TabIndex = 10;
+            this.answButton3.TabStop = true;
+            this.answButton3.Text = "radioButton1";
+            this.answButton3.UseVisualStyleBackColor = true;
+            this.answButton3.Visible = false;
             // 
             // testForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(540, 254);
+            this.ClientSize = new System.Drawing.Size(540, 260);
+            this.Controls.Add(this.answButton3);
+            this.Controls.Add(this.answButton2);
+            this.Controls.Add(this.answButton1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.answerTextBox);
             this.Controls.Add(this.exitButton);
@@ -108,5 +154,8 @@
         private System.Windows.Forms.Label exitButton;
         private System.Windows.Forms.TextBox answerTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton answButton1;
+        private System.Windows.Forms.RadioButton answButton2;
+        private System.Windows.Forms.RadioButton answButton3;
     }
 }

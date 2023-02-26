@@ -8,25 +8,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Coursework
 {
     public partial class testForm : Form
     {
+        //Питання для тесту
         private List<string> questions = new List<string>
         {
-        "Яка столиця України?",
-        "Яка найбільша планета в Сонячній системі?",
-        "Який річковий порт знаходиться в Україні?",
+        "Яке море вважається найтеплішим у світі?",
+        "Який острів являється найбільшим за своєю площею на планеті?",
+        "В якому з перерахованих озер тече не прісна, а солона вода?",
         "Яке найбільше озеро в Україні?"
         };
 
+        //Відповіді для питання де потрібно ввести відповідь з клавіатури
         private List<string> answers = new List<string>
         {
-        "Київ",
-        "Юпітер",
-        "Херсон",
+        "Червоне море",
+        "Гренладія",
+        "Дон Жуан",
         "Світязь"
+        };
+
+        //Відповіді для кнопок 
+        private List<string[]> answerOptions = new List<string[]>
+        {
+        new string[] { "Київ", "Львів", "Харків" },
+        new string[] { "Юпітер", "Марс", "Венера" },
+        new string[] { "Одеса", "Херсон", "Миколаїв" },
+        new string[] { "Світязь", "Івано-Франківське", "Ялпуг" }
+        };
+
+        //Індекси питань, кнопки
+        private List<int> correctAnswers = new List<int>
+        {
+        0,
+        0,
+        1,
+        0
         };
 
         private int currentQuestionIndex = 0;
@@ -66,6 +87,16 @@ namespace Coursework
         }
         private void NextButton_Click(object sender, EventArgs e)
         {
+            answButton1.Visible = true;
+            answButton2.Visible = true;
+            answButton3.Visible = true;
+            answerTextBox.Visible = false;
+            if (answerTextBox.Text.Length < 1)
+            {
+                MessageBox.Show("Поле вводу пусте!","Помилка");
+                return;
+            }
+
             string userAnswer = answerTextBox.Text;
             string correctAnswer = answers[currentQuestionIndex];
 
@@ -90,12 +121,20 @@ namespace Coursework
             double percentageScore = (double)currentBal / questions.Count * 100;
             string resoult = $"Результат: {currentBal}/{questions.Count} ({percentageScore}%)";
             //StreamWriter sw = new StreamWriter("resoults.txt");
-            File.AppendAllText("resoults.txt", "\n" + mainForm.currentUser+ " " +resoult.ToLower());
-            if (MessageBox.Show(resoult) == DialogResult.OK)
+            if (mainForm.currentUser != null)
             {
-                GoToMain();
-                mainForm.currentUser = null;
+                File.AppendAllText("resoults.txt", "\n" + mainForm.currentUser + " " + resoult.ToLower());
+                if (MessageBox.Show(resoult, "Результат") == DialogResult.OK)
+                {
+                    GoToMain();
+                    mainForm.currentUser = null;
+                }
             }
+            else
+               if (MessageBox.Show(resoult, "Результат") == DialogResult.OK)
+                {
+                GoToMain();
+                }
         }
     }
 }
