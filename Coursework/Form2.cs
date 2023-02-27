@@ -18,29 +18,18 @@ namespace Coursework
         private List<string> questions = new List<string>
         {
         "Яке море вважається найтеплішим у світі?",
-        "Який острів являється найбільшим за своєю площею на планеті?",
-        "В якому з перерахованих озер тече не прісна, а солона вода?",
-        "Яке найбільше озеро в Україні?",
-        "Яка столиця України?"
-        };
-
-        //Відповіді для питання де потрібно ввести відповідь з клавіатури
-        private List<string> answers = new List<string>
-        {
-        "Червоне море",
-        "Гренладія",
-        "Дон Жуан",
-        "Світязь",
-        "Київ"
+        "Який острів є найбільшишй за своєю площею?",
+        "1+1",
+        "Назар"
         };
 
         //Відповіді для кнопок 
         private List<string[]> answerOptions = new List<string[]>
         {
-        new string[] { "Київ", "Львів", "Харків" },
-        new string[] { "Юпітер", "Марс", "Венера" },
-        new string[] { "Одеса", "Херсон", "Миколаїв" },
-        new string[] { "Світязь", "Івано-Франківське", "Ялпуг" }
+        new string[] {"Червоне море","Мертве море","Азовське море","Аварійське море"},
+        new string[] {"Гренландія"},      
+        new string[] {"1","2","3","4"},      
+        new string[] {"Сніжко"}      
         };
 
         //Індекси питань, кнопки
@@ -85,23 +74,35 @@ namespace Coursework
         {
             questionLabel.Text = questions[index];
 
-            if (index == 4)
+            if (answerOptions[index].Length == 4)
             {
                 answerTextBox.Visible = false;
                 answButton1.Visible = true;
-                answButton1.Text = answerOptions[0][0];
+                answButton1.Text = answerOptions[index][0];
                 answButton2.Visible = true;
-                answButton2.Text = answerOptions[0][1];
+                answButton2.Text = answerOptions[index][1];
                 answButton3.Visible = true;
-                answButton3.Text = answerOptions[0][2];
+                answButton3.Text = answerOptions[index][2];
+                answButton4.Visible = true;
+                answButton4.Text = answerOptions[index][3];
+            }
+            else
+            {
+                answerTextBox.Visible = true;
+                answButton1.Visible = false;
+                answButton2.Visible = false;
+                answButton3.Visible = false;
+                answButton4.Visible = false;
             }
             answerTextBox.Clear();
         }
+        //Кнопка перевірки та наступне питання
         private void NextButton_Click(object sender, EventArgs e)
         {
-            if(answerTextBox.Visible == false)
+            //Перевірка правильної відповіді з кнопки
+            if (answerOptions[currentQuestionIndex].Length == 4)
             {
-                if (answButton1.Checked || answButton2.Checked || answButton3.Checked)
+                if (answButton1.Checked || answButton2.Checked || answButton3.Checked || answButton4.Checked)
                 {
                     string selectAnsw = "";
                     if (answButton1.Checked)
@@ -113,31 +114,42 @@ namespace Coursework
                         selectAnsw = answButton2.Text;
                     }
                     else if (answButton3.Checked)
+                    {
                         selectAnsw = answButton3.Text;
-                    if(selectAnsw == answerOptions[0][correctAnswers[0]])
+                    }
+                    else if (answButton4.Checked)
+                    {
+                        selectAnsw = answButton4.Text;
+                    }
+
+                    if (selectAnsw == answerOptions[currentQuestionIndex][correctAnswers[currentQuestionIndex]])
                     {
                         currentBal++;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Обери відповідь!", "Помилка");
+                    MessageBox.Show("Оберіть відповідь!", "Помилка");
                     return;
                 }
             }
-
+            
+            //Провірка чи поле вводу пусте
             if (answerTextBox.Text.Length < 1 && answerTextBox.Visible == true)
             {
                 MessageBox.Show("Поле вводу пусте!", "Помилка");
                 return;
             }
 
-            string userAnswer = answerTextBox.Text;
-            string correctAnswer = answers[currentQuestionIndex];
-
-            if (string.Equals(userAnswer, correctAnswer, StringComparison.OrdinalIgnoreCase))
+            //Провірка правильної відповіді з поля для вводу питання
+            if (answerOptions[currentQuestionIndex].Length == 1)
             {
-                currentBal++;
+                string userAnswer = answerTextBox.Text; //Поле користувача
+                string correctAnswer = answerOptions[currentQuestionIndex][correctAnswers[currentQuestionIndex]];//Правильне питання
+                if (string.Equals(userAnswer, correctAnswer, StringComparison.OrdinalIgnoreCase))
+                {
+                    currentBal++;
+                }
             }
 
             if (currentQuestionIndex == questions.Count - 1)
@@ -149,18 +161,12 @@ namespace Coursework
                 currentQuestionIndex++;
                 LoadQuestion(currentQuestionIndex);
             }
-
-            if(answButton1.Text == correctAnswer || answButton2.Text == correctAnswer || answButton3.Text == correctAnswer)
-            {
-                currentBal++;
-            }
         }
         //Вивід результату
         private void ShowResults()
         {
             double percentageScore = (double)currentBal / questions.Count * 100;
-            string resoult = $"Результат: {currentBal}/{questions.Count} ({percentageScore}%)";
-            //StreamWriter sw = new StreamWriter("resoults.txt");
+            string resoult = $"Результат: {currentBal}/{questions.Count} ({Math.Round(percentageScore)}%)";
             if (mainForm.currentUser != null)
             {
                 File.AppendAllText("resoults.txt", "\n" + mainForm.currentUser + " " + resoult.ToLower());
