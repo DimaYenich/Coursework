@@ -20,7 +20,8 @@ namespace Coursework
         "Яке море вважається найтеплішим у світі?",
         "Який острів являється найбільшим за своєю площею на планеті?",
         "В якому з перерахованих озер тече не прісна, а солона вода?",
-        "Яке найбільше озеро в Україні?"
+        "Яке найбільше озеро в Україні?",
+        "Яка столиця України?"
         };
 
         //Відповіді для питання де потрібно ввести відповідь з клавіатури
@@ -29,7 +30,8 @@ namespace Coursework
         "Червоне море",
         "Гренладія",
         "Дон Жуан",
-        "Світязь"
+        "Світязь",
+        "Київ"
         };
 
         //Відповіді для кнопок 
@@ -83,17 +85,50 @@ namespace Coursework
         {
             questionLabel.Text = questions[index];
 
+            if (index == 4)
+            {
+                answerTextBox.Visible = false;
+                answButton1.Visible = true;
+                answButton1.Text = answerOptions[0][0];
+                answButton2.Visible = true;
+                answButton2.Text = answerOptions[0][1];
+                answButton3.Visible = true;
+                answButton3.Text = answerOptions[0][2];
+            }
             answerTextBox.Clear();
         }
         private void NextButton_Click(object sender, EventArgs e)
         {
-            answButton1.Visible = true;
-            answButton2.Visible = true;
-            answButton3.Visible = true;
-            answerTextBox.Visible = false;
-            if (answerTextBox.Text.Length < 1)
+            if(answerTextBox.Visible == false)
             {
-                MessageBox.Show("Поле вводу пусте!","Помилка");
+                if (answButton1.Checked || answButton2.Checked || answButton3.Checked)
+                {
+                    string selectAnsw = "";
+                    if (answButton1.Checked)
+                    {
+                        selectAnsw = answButton1.Text;
+                    }
+                    else if (answButton2.Checked)
+                    {
+                        selectAnsw = answButton2.Text;
+                    }
+                    else if (answButton3.Checked)
+                        selectAnsw = answButton3.Text;
+                    if(selectAnsw == answerOptions[0][correctAnswers[0]])
+                    {
+                        currentBal++;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Обери відповідь!", "Помилка");
+                    return;
+                }
+            }
+
+            if (answerTextBox.Text.Length < 1 && answerTextBox.Visible == true)
+            {
+                MessageBox.Show("Поле вводу пусте!", "Помилка");
                 return;
             }
 
@@ -113,6 +148,11 @@ namespace Coursework
             {
                 currentQuestionIndex++;
                 LoadQuestion(currentQuestionIndex);
+            }
+
+            if(answButton1.Text == correctAnswer || answButton2.Text == correctAnswer || answButton3.Text == correctAnswer)
+            {
+                currentBal++;
             }
         }
         //Вивід результату

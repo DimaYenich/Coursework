@@ -70,13 +70,18 @@ namespace Coursework
 
         private void resoults_Click(object sender, EventArgs e)
         {
-            string resoults = File.ReadAllText("resoults.txt").ToString();
-            if (resoults.Length == 0)
+            if (File.Exists("resoults.txt") == true)
             {
-                MessageBox.Show("Список порожній!","Результати");
-                return;
+                string resoults = File.ReadAllText("resoults.txt").ToString();
+                if (resoults.Length == 0)
+                {
+                    MessageBox.Show("Список порожній!", "Результати");
+                    return;
+                }
+                MessageBox.Show(resoults, "Результати");
             }
-            MessageBox.Show(resoults,"Результати");
+            else
+                MessageBox.Show("Список порожній!", "Результати");
         }
 
         //Пройти тест без вводу імені
