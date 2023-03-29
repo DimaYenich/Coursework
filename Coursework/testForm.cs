@@ -17,37 +17,47 @@ namespace Coursework
         //Питання для тесту
         private List<string> questions = new List<string>
         {
-        "В якій Азіатській країні немає жодної річки?",//1
-        "Який острів є найбільшишй за своєю площею?",//2
-        "Територія якої країни на 70% відсотків складається з гірських вершин?",//3
-        "Який водоспад вважається найвищим у світі?",//4
-        "Яка з перерахованих річок є найбільш повноводною у світі?",//5
-        "Скільки відсотків людей з усієї планети Землі, мешкає лише у Північній півкулі?",//6
-        "Яке море вважається найтеплішим у світі?"//7
+        "В якій півкулі знаходиться Північна Америка?",              //1
+        "Найбільша країна Північної Америки.",                       //2
+        "Яким з перелічених океанів Північна Америка НЕ омивається.",//3
+        "Найбільша температура зареєстрована в Північній Америці.",  //4
+        "У якому році була створена перша карта Північної Америки.",  //5
+        "Найбільше місто в Північні Америці.",  //6
+        "Скільки країн розташовані в Північній Америці.",  //7
+        "Найпоширенішою мовою в Північні Америці є.",  //8
+        "Який відсоток від суші займає Північна Америка.",  //9
+        "Яке приблизне населення в Північній Америці."   //10
         };
 
         //Відповіді для кнопок 
         private List<string[]> answerOptions = new List<string[]>
         {
-        new string[] {"Саудівська Аравія","Ірак","Іран","Йорданія"},//1
-        new string[] {"Гренландія"},      //2
-        new string[] {"Алжир","США","Монголія","Японія"},//3
-        new string[] {"Анхель"},      //4
-        new string[] {"Місурі","Амазонка","Дунай","Амур"},  //5    
-        new string[] {"25%","90%","65%","8%"},//6
-        new string[] {"Азовське море","Червоне море","Аравійське море","Мертве море"}//7
+        new string[] {"Східна півкуля","Західна півкуля","Північна півкуля","Південна півкуля"},//1
+        new string[] {"Канада"},      //2
+        new string[] {"Північно льодовитий","Атлантичний","Індійський","Тихий"},//3
+        new string[] {"57°C", "44°C", "39°C", "62°C"},      //4
+        new string[] {"1801","1782","1539","1422"},  //5    
+        new string[] {"Мехіко"},//6
+        new string[] {"23","4","5","7"},//7
+        new string[] {"Французька","Іспанська","Англійська","Італійська"},//8
+        new string[] {"32%","12%","22,2%","16,5 %"},//9
+        new string[] { "565 млн осіб", "142 млн осіб","651 млн осіб","1.2 млрд осіб"}//10
         };
 
         //Індекси питань, кнопки
         private List<int> correctAnswers = new List<int>
         {
-        0,//1
+        1,//1
         0,//2
-        3,//3
+        2,//3
         0,//4
-        1,//5
-        1,//6
-        1//7
+        2,//5
+        0,//6
+        0,//7
+        2,//8
+        3,//9
+        0 //10
+
         };
 
         private int currentQuestionIndex = 0;
@@ -67,15 +77,15 @@ namespace Coursework
         private void GoToMain()
         {
             this.Close();
-            mainForm main = new mainForm();
+            enterForm main = new enterForm();
             main.Show();
         }
         //Кнопка закрити
         private void exitButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Ви дійсно хочете завершити тест та вийти." +
-                                "\nДанні не буде збережено.", "Вихід", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                GoToMain();           
+            if (MessageBox.Show("ви дійсно хочете завершити тест та вийти." +
+                                "\nданні не буде збережено.", "вихід", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                GoToMain();
 
 
         }
@@ -135,14 +145,18 @@ namespace Coursework
                     {
                         currentBal++;
                     }
-                }
+                    }
                 else
                 {
                     MessageBox.Show("Оберіть відповідь!", "Помилка");
                     return;
                 }
+
             }
-            
+            answButton1.Checked = false;
+            answButton2.Checked = false;
+            answButton3.Checked = false;
+            answButton4.Checked = false;
             //Провірка чи поле вводу пусте
             if (answerTextBox.Text.Length < 1 && answerTextBox.Visible == true)
             {
@@ -153,9 +167,10 @@ namespace Coursework
             //Провірка правильної відповіді з поля для вводу питання
             if (answerOptions[currentQuestionIndex].Length == 1)
             {
+                //this.Size = new Size(540, 500);
                 string userAnswer = answerTextBox.Text; //Поле користувача
                 string correctAnswer = answerOptions[currentQuestionIndex][correctAnswers[currentQuestionIndex]];//Правильне питання
-                if (string.Equals(userAnswer, correctAnswer, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(userAnswer.ToLower(), correctAnswer.ToLower(), StringComparison.OrdinalIgnoreCase))
                 {
                     currentBal++;
                 }
@@ -176,13 +191,13 @@ namespace Coursework
         {
             double percentageScore = (double)currentBal / questions.Count * 100;
             string resoult = $"Результат: {currentBal}/{questions.Count} ({Math.Round(percentageScore)}%)";
-            if (mainForm.currentUser != null)
+            if (enterForm.currentUser != null)
             {
-                File.AppendAllText("resoults.txt", "\n" + mainForm.currentUser + " " + resoult.ToLower());
+                File.AppendAllText("resoults.txt", "\n" + enterForm.currentUser + " " + resoult.ToLower());
                 if (MessageBox.Show(resoult, "Результат") == DialogResult.OK)
                 {
                     GoToMain();
-                    mainForm.currentUser = null;
+                    enterForm.currentUser = null;
                 }
             }
             else
@@ -190,6 +205,10 @@ namespace Coursework
                 {
                 GoToMain();
                 }
+        }
+
+        private void testForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

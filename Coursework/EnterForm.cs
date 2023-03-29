@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Coursework
 {
-    public partial class mainForm : Form
+    public partial class enterForm : Form
     {
         static public string currentUser = null;
-        public mainForm()
+        public enterForm()
         {
             InitializeComponent();
             if (File.Exists("resoults.txt") == false)
@@ -25,8 +25,8 @@ namespace Coursework
         private void StartTest()
         {
             this.Hide();
-            testForm test = new testForm();
-            test.Show();
+            //testForm test = new testForm();
+            new testForm().Show();
         }
         //Подія кнопки яка починає тест
         private void button1_Click(object sender, EventArgs e)
@@ -65,7 +65,8 @@ namespace Coursework
 
         private void exitButton_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            new mainForm().Show();
         }
 
         private void resoults_Click(object sender, EventArgs e)
@@ -88,6 +89,16 @@ namespace Coursework
         private void withoutNameLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             StartTest();
+        }
+
+        private void проПрограмуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Навчально-контролююча програма з георгафії. Написана на мові програмування C#.","Про програму", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void теоритичніВідомостіToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Coursework
 {
-    partial class mainForm
+    partial class enterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -106,7 +106,7 @@
             // 
             this.testLalel.AutoSize = true;
             this.testLalel.Font = new System.Drawing.Font("Franklin Gothic Medium", 25F, System.Drawing.FontStyle.Bold);
-            this.testLalel.Location = new System.Drawing.Point(71, 9);
+            this.testLalel.Location = new System.Drawing.Point(69, 24);
             this.testLalel.Name = "testLalel";
             this.testLalel.Size = new System.Drawing.Size(227, 78);
             this.testLalel.TabIndex = 5;
@@ -126,7 +126,7 @@
             this.withoutNameLabel.Text = "Пройти без вводу імені (дані не буде збережено)";
             this.withoutNameLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.withoutNameLabel_LinkClicked);
             // 
-            // mainForm
+            // enterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,7 +140,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.enterLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "mainForm";
+            this.Name = "enterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.ResumeLayout(false);
