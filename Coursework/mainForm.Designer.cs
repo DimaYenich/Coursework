@@ -33,16 +33,16 @@
             this.теоріяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.тема1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.тема2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.тестуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.тестНаТему1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.тестНаТему2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загальнийТестToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.проПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.тестуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.тестНаТему1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.тестНаТему2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загальнийТестToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,13 +74,43 @@
             // 
             this.тема1ToolStripMenuItem.Name = "тема1ToolStripMenuItem";
             this.тема1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.тема1ToolStripMenuItem.Text = "Тема 1";
+            this.тема1ToolStripMenuItem.Text = "Північна Америка";
+            this.тема1ToolStripMenuItem.Click += new System.EventHandler(this.тема1ToolStripMenuItem_Click);
             // 
             // тема2ToolStripMenuItem
             // 
             this.тема2ToolStripMenuItem.Name = "тема2ToolStripMenuItem";
             this.тема2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.тема2ToolStripMenuItem.Text = "Тема 2";
+            this.тема2ToolStripMenuItem.Text = "Південна Америка";
+            this.тема2ToolStripMenuItem.Click += new System.EventHandler(this.тема2ToolStripMenuItem_Click);
+            // 
+            // тестуванняToolStripMenuItem
+            // 
+            this.тестуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.тестНаТему1ToolStripMenuItem,
+            this.тестНаТему2ToolStripMenuItem,
+            this.загальнийТестToolStripMenuItem});
+            this.тестуванняToolStripMenuItem.Name = "тестуванняToolStripMenuItem";
+            this.тестуванняToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.тестуванняToolStripMenuItem.Text = "Тестування";
+            // 
+            // тестНаТему1ToolStripMenuItem
+            // 
+            this.тестНаТему1ToolStripMenuItem.Name = "тестНаТему1ToolStripMenuItem";
+            this.тестНаТему1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.тестНаТему1ToolStripMenuItem.Text = "Тест на тему №1";
+            // 
+            // тестНаТему2ToolStripMenuItem
+            // 
+            this.тестНаТему2ToolStripMenuItem.Name = "тестНаТему2ToolStripMenuItem";
+            this.тестНаТему2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.тестНаТему2ToolStripMenuItem.Text = "Тест на тему №2";
+            // 
+            // загальнийТестToolStripMenuItem
+            // 
+            this.загальнийТестToolStripMenuItem.Name = "загальнийТестToolStripMenuItem";
+            this.загальнийТестToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загальнийТестToolStripMenuItem.Text = "Загальний тест";
             // 
             // проПрограмуToolStripMenuItem
             // 
@@ -137,34 +167,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // тестуванняToolStripMenuItem
-            // 
-            this.тестуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.тестНаТему1ToolStripMenuItem,
-            this.тестНаТему2ToolStripMenuItem,
-            this.загальнийТестToolStripMenuItem});
-            this.тестуванняToolStripMenuItem.Name = "тестуванняToolStripMenuItem";
-            this.тестуванняToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.тестуванняToolStripMenuItem.Text = "Тестування";
-            // 
-            // тестНаТему1ToolStripMenuItem
-            // 
-            this.тестНаТему1ToolStripMenuItem.Name = "тестНаТему1ToolStripMenuItem";
-            this.тестНаТему1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.тестНаТему1ToolStripMenuItem.Text = "Тест на тему №1";
-            // 
-            // тестНаТему2ToolStripMenuItem
-            // 
-            this.тестНаТему2ToolStripMenuItem.Name = "тестНаТему2ToolStripMenuItem";
-            this.тестНаТему2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.тестНаТему2ToolStripMenuItem.Text = "Тест на тему №2";
-            // 
-            // загальнийТестToolStripMenuItem
-            // 
-            this.загальнийТестToolStripMenuItem.Name = "загальнийТестToolStripMenuItem";
-            this.загальнийТестToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.загальнийТестToolStripMenuItem.Text = "Загальний тест";
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +181,7 @@
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Головне вікно";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

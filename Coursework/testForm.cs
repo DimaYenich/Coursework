@@ -203,7 +203,7 @@ namespace Coursework
             else
                if (MessageBox.Show(resoult, "Результат") == DialogResult.OK)
                 {
-                GoToMain();
+                    GoToMain();
                 }
         }
 

@@ -79,5 +79,15 @@ namespace Coursework.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap South_America__orthographic_projection__svg {
+            get {
+                object obj = ResourceManager.GetObject("South_America_(orthographic_projection).svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

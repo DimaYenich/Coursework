@@ -113,5 +113,8 @@
   <ItemGroup>
     <None Include="Resources\rkeb1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\South_America_%28orthographic_projection%29.svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

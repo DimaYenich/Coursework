@@ -124,4 +124,7 @@
   <data name="rkeb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rkeb1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="South_America_(orthographic_projection).svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\South_America_(orthographic_projection).svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

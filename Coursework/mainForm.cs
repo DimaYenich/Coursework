@@ -25,7 +25,6 @@ namespace Coursework
 
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
         }
 
         private void проПрограмуToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,6 +45,25 @@ namespace Coursework
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void тема1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Teor1().Show();
+
+        }
+
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void тема2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Teor1 teor = new Teor1(2);
+            teor.Show();
         }
     }
 }
