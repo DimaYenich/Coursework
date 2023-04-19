@@ -22,11 +22,11 @@ namespace Coursework
 
         }
 
-        private void StartTest()
+        public void StartTest()
         {
             this.Hide();
             //testForm test = new testForm();
-            new testForm().Show();
+            new testForm(2).Show();
         }
         //Подія кнопки яка починає тест
         private void button1_Click(object sender, EventArgs e)

@@ -43,6 +43,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.тема3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,8 @@
             // 
             this.теоріяToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.тема1ToolStripMenuItem,
-            this.тема2ToolStripMenuItem});
+            this.тема2ToolStripMenuItem,
+            this.тема3ToolStripMenuItem});
             this.теоріяToolStripMenuItem.Name = "теоріяToolStripMenuItem";
             this.теоріяToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
             this.теоріяToolStripMenuItem.Text = "Теоритичні відомості";
@@ -73,14 +75,14 @@
             // тема1ToolStripMenuItem
             // 
             this.тема1ToolStripMenuItem.Name = "тема1ToolStripMenuItem";
-            this.тема1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.тема1ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.тема1ToolStripMenuItem.Text = "Північна Америка";
             this.тема1ToolStripMenuItem.Click += new System.EventHandler(this.тема1ToolStripMenuItem_Click);
             // 
             // тема2ToolStripMenuItem
             // 
             this.тема2ToolStripMenuItem.Name = "тема2ToolStripMenuItem";
-            this.тема2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.тема2ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.тема2ToolStripMenuItem.Text = "Південна Америка";
             this.тема2ToolStripMenuItem.Click += new System.EventHandler(this.тема2ToolStripMenuItem_Click);
             // 
@@ -99,6 +101,7 @@
             this.тестНаТему1ToolStripMenuItem.Name = "тестНаТему1ToolStripMenuItem";
             this.тестНаТему1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.тестНаТему1ToolStripMenuItem.Text = "Тест на тему №1";
+            this.тестНаТему1ToolStripMenuItem.Click += new System.EventHandler(this.тестНаТему1ToolStripMenuItem_Click);
             // 
             // тестНаТему2ToolStripMenuItem
             // 
@@ -167,6 +170,12 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // тема3ToolStripMenuItem
+            // 
+            this.тема3ToolStripMenuItem.Name = "тема3ToolStripMenuItem";
+            this.тема3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.тема3ToolStripMenuItem.Text = "Тема 3";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,5 +216,6 @@
         private System.Windows.Forms.ToolStripMenuItem тестНаТему1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem тестНаТему2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загальнийТестToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem тема3ToolStripMenuItem;
     }
 }

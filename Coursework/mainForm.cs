@@ -65,5 +65,9 @@ namespace Coursework
             Teor1 teor = new Teor1(2);
             teor.Show();
         }
+
+        private void тестНаТему1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
