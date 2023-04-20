@@ -13,34 +13,59 @@ namespace Coursework
 {
     public partial class enterForm : Form
     {
+        public int index;
         static public string currentUser = null;
-        public enterForm()
+        public enterForm(int tempIndex)
         {
+            index = tempIndex;
             InitializeComponent();
+
             if (File.Exists("resoults.txt") == false)
                 File.Create("resoults.txt");
 
         }
 
-        public void StartTest()
+        public enterForm()
+        {
+            InitializeComponent();
+
+            if (File.Exists("resoults.txt") == false)
+                File.Create("resoults.txt");
+
+        }
+
+        public void StartTest(int index)
         {
             this.Hide();
             //testForm test = new testForm();
-            new testForm(2).Show();
+            new testForm(index).Show();
         }
         //Подія кнопки яка починає тест
         private void button1_Click(object sender, EventArgs e)
         {
+            Start(index);
             //Перевірка довжини імені
+            //if (inputName.Text.Length >= 2)
+            //{
+            //    currentUser = inputName.Text;
+            //    inputName.Clear();
+            //    StartTest(1);
+            //}
+            //else
+            //    MessageBox.Show("Поле імені не може бути пустим та має містити в собі мінімум 2 символи. ","Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Start(int index)
+        {
             if (inputName.Text.Length >= 2)
             {
                 currentUser = inputName.Text;
                 inputName.Clear();
-                StartTest();
+                StartTest(index);
             }
             else
-                MessageBox.Show("Поле імені не може бути пустим та має містити в собі мінімум 2 символи. ","Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+                MessageBox.Show("Поле імені не може бути пустим та має містити в собі мінімум 2 символи. ", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }    
 
         private void exitButton_Click(object sender, EventArgs e)
         {
@@ -88,7 +113,7 @@ namespace Coursework
         //Пройти тест без вводу імені
         private void withoutNameLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            StartTest();
+            StartTest(index);
         }
 
         private void проПрограмуToolStripMenuItem_Click(object sender, EventArgs e)
