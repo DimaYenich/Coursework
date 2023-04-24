@@ -33,17 +33,18 @@
             this.inputName = new System.Windows.Forms.TextBox();
             this.resoults = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Label();
-            this.testLalel = new System.Windows.Forms.Label();
             this.withoutNameLabel = new System.Windows.Forms.LinkLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // enterLabel
             // 
             this.enterLabel.AutoSize = true;
-            this.enterLabel.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.enterLabel.Location = new System.Drawing.Point(15, 102);
+            this.enterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Italic);
+            this.enterLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.enterLabel.Location = new System.Drawing.Point(19, 102);
             this.enterLabel.Name = "enterLabel";
-            this.enterLabel.Size = new System.Drawing.Size(321, 37);
+            this.enterLabel.Size = new System.Drawing.Size(313, 31);
             this.enterLabel.TabIndex = 0;
             this.enterLabel.Text = "Введіть ім\'я щоб почати";
             // 
@@ -70,7 +71,6 @@
             this.inputName.Name = "inputName";
             this.inputName.Size = new System.Drawing.Size(328, 38);
             this.inputName.TabIndex = 0;
-            this.inputName.TabStop = false;
             this.inputName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // resoults
@@ -102,22 +102,11 @@
             this.exitButton.MouseLeave += new System.EventHandler(this.exitButton_MouseLeave);
             this.exitButton.MouseHover += new System.EventHandler(this.exitButton_MouseHover);
             // 
-            // testLalel
-            // 
-            this.testLalel.AutoSize = true;
-            this.testLalel.Font = new System.Drawing.Font("Franklin Gothic Medium", 25F, System.Drawing.FontStyle.Bold);
-            this.testLalel.Location = new System.Drawing.Point(69, 24);
-            this.testLalel.Name = "testLalel";
-            this.testLalel.Size = new System.Drawing.Size(227, 78);
-            this.testLalel.TabIndex = 5;
-            this.testLalel.Text = "Тест на тему \n\"Географія\"";
-            this.testLalel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // withoutNameLabel
             // 
             this.withoutNameLabel.AutoSize = true;
             this.withoutNameLabel.Font = new System.Drawing.Font("Franklin Gothic Medium", 10F);
-            this.withoutNameLabel.LinkColor = System.Drawing.Color.Black;
+            this.withoutNameLabel.LinkColor = System.Drawing.Color.Gray;
             this.withoutNameLabel.Location = new System.Drawing.Point(28, 186);
             this.withoutNameLabel.Name = "withoutNameLabel";
             this.withoutNameLabel.Size = new System.Drawing.Size(308, 18);
@@ -126,14 +115,28 @@
             this.withoutNameLabel.Text = "Пройти без вводу імені (дані не буде збережено)";
             this.withoutNameLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.withoutNameLabel_LinkClicked);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.textBox1.Location = new System.Drawing.Point(31, 35);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(293, 64);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // enterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(355, 290);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.withoutNameLabel);
-            this.Controls.Add(this.testLalel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.resoults);
             this.Controls.Add(this.inputName);
@@ -155,8 +158,8 @@
         private System.Windows.Forms.TextBox inputName;
         private System.Windows.Forms.Button resoults;
         private System.Windows.Forms.Label exitButton;
-        private System.Windows.Forms.Label testLalel;
         private System.Windows.Forms.LinkLabel withoutNameLabel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

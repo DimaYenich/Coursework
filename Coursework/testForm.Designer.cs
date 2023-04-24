@@ -90,10 +90,10 @@
             // answButton1
             // 
             this.answButton1.AutoSize = true;
-            this.answButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.answButton1.Location = new System.Drawing.Point(31, 106);
+            this.answButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.answButton1.Location = new System.Drawing.Point(21, 106);
             this.answButton1.Name = "answButton1";
-            this.answButton1.Size = new System.Drawing.Size(167, 33);
+            this.answButton1.Size = new System.Drawing.Size(140, 29);
             this.answButton1.TabIndex = 8;
             this.answButton1.Text = "radioButton1";
             this.answButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,10 +103,10 @@
             // answButton2
             // 
             this.answButton2.AutoSize = true;
-            this.answButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.answButton2.Location = new System.Drawing.Point(31, 158);
+            this.answButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.answButton2.Location = new System.Drawing.Point(21, 158);
             this.answButton2.Name = "answButton2";
-            this.answButton2.Size = new System.Drawing.Size(167, 33);
+            this.answButton2.Size = new System.Drawing.Size(140, 29);
             this.answButton2.TabIndex = 9;
             this.answButton2.Text = "radioButton1";
             this.answButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,10 +116,10 @@
             // answButton3
             // 
             this.answButton3.AutoSize = true;
-            this.answButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.answButton3.Location = new System.Drawing.Point(302, 106);
+            this.answButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.answButton3.Location = new System.Drawing.Point(300, 106);
             this.answButton3.Name = "answButton3";
-            this.answButton3.Size = new System.Drawing.Size(167, 33);
+            this.answButton3.Size = new System.Drawing.Size(140, 29);
             this.answButton3.TabIndex = 10;
             this.answButton3.Text = "radioButton1";
             this.answButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,10 +129,10 @@
             // answButton4
             // 
             this.answButton4.AutoSize = true;
-            this.answButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.answButton4.Location = new System.Drawing.Point(302, 158);
+            this.answButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.answButton4.Location = new System.Drawing.Point(300, 158);
             this.answButton4.Name = "answButton4";
-            this.answButton4.Size = new System.Drawing.Size(167, 33);
+            this.answButton4.Size = new System.Drawing.Size(140, 29);
             this.answButton4.TabIndex = 11;
             this.answButton4.Text = "radioButton1";
             this.answButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

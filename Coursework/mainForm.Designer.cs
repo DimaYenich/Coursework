@@ -75,22 +75,23 @@
             // тема1ToolStripMenuItem
             // 
             this.тема1ToolStripMenuItem.Name = "тема1ToolStripMenuItem";
-            this.тема1ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.тема1ToolStripMenuItem.Text = "Північна Америка";
+            this.тема1ToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.тема1ToolStripMenuItem.Text = "Тема №1: \"Північна Америка\"";
             this.тема1ToolStripMenuItem.Click += new System.EventHandler(this.тема1ToolStripMenuItem_Click);
             // 
             // тема2ToolStripMenuItem
             // 
             this.тема2ToolStripMenuItem.Name = "тема2ToolStripMenuItem";
-            this.тема2ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.тема2ToolStripMenuItem.Text = "Південна Америка";
+            this.тема2ToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.тема2ToolStripMenuItem.Text = "Тема №2: \"Південна Америка\"";
             this.тема2ToolStripMenuItem.Click += new System.EventHandler(this.тема2ToolStripMenuItem_Click);
             // 
             // тема3ToolStripMenuItem
             // 
             this.тема3ToolStripMenuItem.Name = "тема3ToolStripMenuItem";
-            this.тема3ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.тема3ToolStripMenuItem.Text = "Тема 3";
+            this.тема3ToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.тема3ToolStripMenuItem.Text = "Тема №3:\"Гренландія\"";
+            this.тема3ToolStripMenuItem.Click += new System.EventHandler(this.тема3ToolStripMenuItem_Click);
             // 
             // тестуванняToolStripMenuItem
             // 
@@ -105,22 +106,22 @@
             // тестНаТему1ToolStripMenuItem
             // 
             this.тестНаТему1ToolStripMenuItem.Name = "тестНаТему1ToolStripMenuItem";
-            this.тестНаТему1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.тестНаТему1ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.тестНаТему1ToolStripMenuItem.Text = "Тест на тему №1";
             this.тестНаТему1ToolStripMenuItem.Click += new System.EventHandler(this.тестНаТему1ToolStripMenuItem_Click);
             // 
             // тестНаТему2ToolStripMenuItem
             // 
             this.тестНаТему2ToolStripMenuItem.Name = "тестНаТему2ToolStripMenuItem";
-            this.тестНаТему2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.тестНаТему2ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.тестНаТему2ToolStripMenuItem.Text = "Тест на тему №2";
             this.тестНаТему2ToolStripMenuItem.Click += new System.EventHandler(this.тестНаТему2ToolStripMenuItem_Click);
             // 
             // загальнийТестToolStripMenuItem
             // 
             this.загальнийТестToolStripMenuItem.Name = "загальнийТестToolStripMenuItem";
-            this.загальнийТестToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.загальнийТестToolStripMenuItem.Text = "Загальний тест";
+            this.загальнийТестToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.загальнийТестToolStripMenuItem.Text = "Тест на тему №3";
             this.загальнийТестToolStripMenuItem.Click += new System.EventHandler(this.загальнийТестToolStripMenuItem_Click);
             // 
             // проПрограмуToolStripMenuItem
@@ -139,23 +140,23 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button1.Location = new System.Drawing.Point(12, 259);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.button1.Location = new System.Drawing.Point(12, 252);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 75);
+            this.button1.Size = new System.Drawing.Size(372, 75);
             this.button1.TabIndex = 1;
             this.button1.TabStop = false;
-            this.button1.Text = "Перейти до тестування";
+            this.button1.Text = "Почати підсумковий тест";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button2.Location = new System.Drawing.Point(210, 259);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.button2.Location = new System.Drawing.Point(12, 333);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 75);
+            this.button2.Size = new System.Drawing.Size(372, 75);
             this.button2.TabIndex = 2;
             this.button2.TabStop = false;
             this.button2.Text = "Вийти з програми";
@@ -182,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 351);
+            this.ClientSize = new System.Drawing.Size(397, 424);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -191,7 +192,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Головне вікно";
+            this.Text = "Навчально-контролююча програма з географії";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);

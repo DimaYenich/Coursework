@@ -19,8 +19,8 @@ namespace Coursework
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //new enterForm().Show();
+            this.Hide();
+            new enterForm(0).Show();
         }
 
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -82,6 +82,13 @@ namespace Coursework
         {
             this.Hide();
             new enterForm(3).Show();
+        }
+
+        private void тема3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Teor1 teor = new Teor1(3);
+            teor.Show();
         }
     }
 }

@@ -20,6 +20,18 @@ namespace Coursework
             index = tempIndex;
             InitializeComponent();
 
+            if(index == 0 )
+            {
+                textBox1.Text = "Загальний тест";
+                withoutNameLabel.Visible = false;
+            }
+            if (index == 1)            
+                textBox1.Text = "Північна Америка";              
+            if (index == 2)
+                textBox1.Text = "Південна Америка";
+            if (index == 3)
+                textBox1.Text = "Гренландія";
+
             if (File.Exists("resoults.txt") == false)
                 File.Create("resoults.txt");
 
@@ -28,16 +40,18 @@ namespace Coursework
         public enterForm()
         {
             InitializeComponent();
+            
 
             if (File.Exists("resoults.txt") == false)
+            {
                 File.Create("resoults.txt");
+            }
 
         }
 
         public void StartTest(int index)
         {
             this.Hide();
-            //testForm test = new testForm();
             new testForm(index).Show();
         }
         //Подія кнопки яка починає тест

@@ -18,14 +18,52 @@ namespace Coursework
         List<string> questions = new List<string>();
         List<string[]> answerOptions = new List<string[]>();
         List<int> correctAnswers = new List<int>();
-        private void Ques(int index, ref List<string> questions, ref List<string[]> answerOptions, ref List<int> correctAnswers)
+        string currentTest = null;
+        private void Ques(int index, ref List<string> questions, ref List<string[]> answerOptions, ref List<int> correctAnswers, ref string currentTest)
         {
             questions.Clear();
             answerOptions.Clear();
             correctAnswers.Clear();
+            if(index == 0)
+            {
+                currentTest = "ЗАГАЛЬНИЙ ТЕСТ";
+                questions.AddRange(new string[]{"В якій півкулі знаходиться Північна Америка?",              //1
+                "Найбільша країна Північної Америки.",
+                "Яким з перелічених океанів Північна Америка НЕ омивається.",//3
+                "Найбільша температура зареєстрована в Північній Америці.",  //4
+                "У якому році була створена перша карта Північної Америки.", //5
+                "Найбільше місто в Північні Америці.",                       //6
+                "Скільки країн розташовані в Північній Америці.",            //7
+                "Найпоширенішою мовою в Північні Америці є.",                //8
+                "Який відсоток від суші займає Північна Америка.",           //9
+                "Яке приблизне населення в Північній Америці."});
 
+                answerOptions.Add(new string[] { "Східна півкуля", "Західна півкуля", "Північна півкуля", "Південна півкуля" });
+                answerOptions.Add(new string[] { "Канада" });//2
+                answerOptions.Add(new string[] { "Північно льодовитий", "Атлантичний", "Індійський", "Тихий" });
+                answerOptions.Add(new string[] { "57°C", "44°C", "39°C", "62°C" });
+                answerOptions.Add(new string[] { "1801", "1782", "1539", "1422" });
+                answerOptions.Add(new string[] { "Мехіко" });
+                answerOptions.Add(new string[] { "23", "4", "5", "7" });
+                answerOptions.Add(new string[] { "Французька", "Іспанська", "Англійська", "Італійська" });
+                answerOptions.Add(new string[] { "32%", "12%", "22,2%", "16,5 %" });
+                answerOptions.Add(new string[] { "565 млн осіб", "142 млн осіб", "651 млн осіб", "1.2 млрд осіб" });
+
+                correctAnswers.AddRange(new int[]
+                    {  1,//1
+                        0,//2
+                        2,//3
+                        0,//4
+                        2,//5
+                        0,//6
+                        0,//7
+                        2,//8
+                        3,//9
+                        0});
+            }
             if(index == 1)
             {
+                currentTest = "Північна Америка";
                 questions.AddRange(new string[]{"В якій півкулі знаходиться Північна Америка?",              //1
                 "Найбільша країна Північної Америки.",
                 "Яким з перелічених океанів Північна Америка НЕ омивається.",//3
@@ -63,6 +101,7 @@ namespace Coursework
 
             if(index == 2)
             {
+                currentTest = "Південна Америка";
                 questions.AddRange(new string[]{
                 "Який материк розташований на заході від Атлантичного океану?",
                 "Які океани омивають Південну Америку?",
@@ -72,165 +111,74 @@ namespace Coursework
                 "Де розташовані найвищі водоспади світу?",
                 "Який водоспад є найвищим у світі?",
                 "Яка річка є найбільшою в світі та протікає по Південній Америці?",
-                "Яка протяжність Південної Америки з півночі на південь та із заходу на схід?",           
-                "Тест 10"});
+                "Яка протяжність Південної Америки з півночі на південь та із заходу на схід?",
+                "Площа Південої Америки — 17,8 млн км², яке місце вона посідає серед континентів?"});
 
                 answerOptions.Add(new string[] { "Північна Америка", "Південна Америка", "Євразія", "Австралія" }); //
                 answerOptions.Add(new string[] { "Тихий і Атлантичний", "Індійський та Атлантичний", "Тихий та Індійський", "Арктичний та Антарктичний" });//
                 answerOptions.Add(new string[] { "12"}); //
                 answerOptions.Add(new string[] { "Бразилія", "Аргентина", "Колумбія", "Чилі" }); //
-                answerOptions.Add(new string[] { "1801", "1782", "1539", "1422" });
-                answerOptions.Add(new string[] { "Мехіко" });
-                answerOptions.Add(new string[] { "23", "4", "5", "7" });
-                answerOptions.Add(new string[] { "Французька", "Іспанська", "Англійська", "Італійська" });
-                answerOptions.Add(new string[] { "32%", "12%", "22,2%", "16,5 %" });
-                answerOptions.Add(new string[] { "565 млн осіб", "142 млн осіб", "651 млн осіб", "1.2 млрд осіб" });
+                answerOptions.Add(new string[] { "Англійській", "Іспанській", "Португальській", "Французькій" });//
+                answerOptions.Add(new string[] { "Північна Америка", "Європа","Африка", "Південна Америка"});//
+                answerOptions.Add(new string[] { "Анхель", "Ігуасу","Ніагара", "Вікторія"});//
+                answerOptions.Add(new string[] { "Міссісіпі", "Амазонка", "Хуанхе", "Ніл" });//
+                answerOptions.Add(new string[] { "7350 км. та 4900 км.", "8320 км. та 3405 км.", "7350 км. та 2300 км.", "5110 км. та 4900 км." });
+                answerOptions.Add(new string[] { "1", "2", "3", "4" });
+
+                correctAnswers.AddRange(new int[]
+                   { 
+                        1,//1
+                        0,//2
+                        0,//3
+                        0,//4
+                        2,//5
+                        3,//6
+                        0,//7
+                        1,//8
+                        0,//9
+                        3
+                   });
             }
 
             if (index == 3)
             {
-                MessageBox.Show("3");
+                currentTest = "Гренландія";
+                questions.AddRange(new string[]{"До складу якої країни відноситься Гренландія?",//1
+                "З точки зору географії чим є Гренландія?", //2
+                "Яка кількість населення в Гренландії за даними на 2019 рік?",//3
+                "Яка частина Гренландії вкрита льодом?",//4  
+                "До якого материку географічно належить Гренландія?",//5 
+                "Як називають основне населення Гренландії?",//6                       
+                "Якою є найнижча темература зафіксована на острові?",            
+                "На території Гренландії рошташований найбільший у світі льодовик. Яку назву він носить?",                
+                "Яка назву носить столиця Гренландії?",//9           
+                "Яка кількість людей проживає у столиці?"});//10
+
+                answerOptions.Add(new string[] { "Швеція","Данія","Норвегія","США" });
+                answerOptions.Add(new string[] { "Островом","Півостровом","Материком","Льодовиком" });
+                answerOptions.Add(new string[] { "55,992", "559,920", "5,599", "5,599,200" });//3
+                answerOptions.Add(new string[] { "94%", "80%", "72%", "54%" });//4
+                answerOptions.Add(new string[] { "Африка", "Євразія", "Південа Америка", "Північна Америка" });//5
+                answerOptions.Add(new string[] { "Ескімоси" });//6
+                answerOptions.Add(new string[] { "-93 градусів", "-53 градусів", "-70 градусів", "-112 градусів" });//7
+                answerOptions.Add(new string[] { "Сардона", "Алеч", "Ватнайекюдль", "Якобсхавн," });
+                answerOptions.Add(new string[] { "Нуук"});//9
+                answerOptions.Add(new string[] { "17 тисяч осіб", "9 тисяч осіб", "12 тисяч осіб", "22 тисяч осіб" });//10
+
+                correctAnswers.AddRange(new int[]
+                    {  1,//1
+                        0,//2
+                        0,//3
+                        1,//4
+                        3,//5
+                        0,//6
+                        2,//7
+                        3,//8
+                        0,//9
+                        0});//10
+
             }
         }
-        //private void Ques(int index)
-        //{
-        //    if(index == 1)
-        //    {
-        //        {
-        //        "В якій півкулі знаходиться Північна Америка?",              //1
-        //        "Найбільша країна Північної Америки.",                       //2
-        //        "Яким з перелічених океанів Північна Америка НЕ омивається.",//3
-        //        "Найбільша температура зареєстрована в Північній Америці.",  //4
-        //        "У якому році була створена перша карта Північної Америки.", //5
-        //        "Найбільше місто в Північні Америці.",                       //6
-        //        "Скільки країн розташовані в Північній Америці.",            //7
-        //        "Найпоширенішою мовою в Північні Америці є.",                //8
-        //        "Який відсоток від суші займає Північна Америка.",           //9
-        //        "Яке приблизне населення в Північній Америці."               //10
-        //        };
-
-        //        List<string[]> answerOptions = new List<string[]>
-        //        {
-        //        new string[] {"Східна півкуля","Західна півкуля","Північна півкуля","Південна півкуля"},//1
-        //        new string[] {"Канада"},      //2
-        //        new string[] {"Північно льодовитий","Атлантичний","Індійський","Тихий"},//3
-        //        new string[] {"57°C", "44°C", "39°C", "62°C"},      //4
-        //        new string[] {"1801","1782","1539","1422"},  //5    
-        //        new string[] {"Мехіко"},//6
-        //        new string[] {"23","4","5","7"},//7
-        //        new string[] {"Французька","Іспанська","Англійська","Італійська"},//8
-        //        new string[] {"32%","12%","22,2%","16,5 %"},//9
-        //        new string[] { "565 млн осіб", "142 млн осіб","651 млн осіб","1.2 млрд осіб"}//10
-        //        };
-
-        //        List<int> correctAnswers = new List<int>
-        //        {
-        //        1,//1
-        //        0,//2
-        //        2,//3
-        //        0,//4
-        //        2,//5
-        //        0,//6
-        //        0,//7
-        //        2,//8
-        //        3,//9
-        //        0 //10
-        //        };
-        //    }
-        //    if(index == 2)
-        //    {
-        //        List<string> questions = new List<string>
-        //        {
-        //        "Питання 1",              //1
-        //        "Найбільша країна Північної Америки.",                       //2
-        //        "Яким з перелічених океанів Північна Америка НЕ омивається.",//3
-        //        "Найбільша температура зареєстрована в Північній Америці.",  //4
-        //        "У якому році була створена перша карта Північної Америки.", //5
-        //        "Найбільше місто в Північні Америці.",                       //6
-        //        "Скільки країн розташовані в Північній Америці.",            //7
-        //        "Найпоширенішою мовою в Північні Америці є.",                //8
-        //        "Який відсоток від суші займає Північна Америка.",          //9
-        //        "Яке приблизне населення в Північній Америці."              //10
-        //        };
-
-        //        List<string[]> answerOptions = new List<string[]>
-        //        {
-        //        new string[] {"Східна півкуля","Західна півкуля","Північна півкуля","Південна півкуля"},//1
-        //        new string[] {"Канада"},      //2
-        //        new string[] {"Північно льодовитий","Атлантичний","Індійський","Тихий"},//3
-        //        new string[] {"57°C", "44°C", "39°C", "62°C"},      //4
-        //        new string[] {"1801","1782","1539","1422"},  //5    
-        //        new string[] {"Мехіко"},//6
-        //        new string[] {"23","4","5","7"},//7
-        //        new string[] {"Французька","Іспанська","Англійська","Італійська"},//8
-        //        new string[] {"32%","12%","22,2%","16,5 %"},//9
-        //        new string[] { "565 млн осіб", "142 млн осіб","651 млн осіб","1.2 млрд осіб"}//10
-        //        };
-
-        //        List<int> correctAnswers = new List<int>
-        //        {
-        //        1,//1
-        //        0,//2
-        //        2,//3
-        //        0,//4
-        //        2,//5
-        //        0,//6
-        //        0,//7
-        //        2,//8
-        //        3,//9
-        //        0 //10
-        //        };
-        //    }
-        //    if (index == 3)
-        //    {
-
-        //    }
-        //}
-        //Питання для тесту
-        //List<string> questions = new List<string>
-        //{
-        //"В якій півкулі знаходиться Північна Америка?",              //1
-        //"Найбільша країна Північної Америки.",                       //2
-        //"Яким з перелічених океанів Північна Америка НЕ омивається.",//3
-        //"Найбільша температура зареєстрована в Північній Америці.",  //4
-        //"У якому році була створена перша карта Північної Америки.", //5
-        //"Найбільше місто в Північні Америці.",                       //6
-        //"Скільки країн розташовані в Північній Америці.",            //7
-        //"Найпоширенішою мовою в Північні Америці є.",                //8
-        //"Який відсоток від суші займає Північна Америка.",          //9
-        //"Яке приблизне населення в Північній Америці."              //10
-        //};
-
-        ////Відповіді для кнопок 
-        //List<string[]> answerOptions = new List<string[]>
-        //{
-        //new string[] {"Східна півкуля","Західна півкуля","Північна півкуля","Південна півкуля"},//1
-        //new string[] {"Канада"},      //2
-        //new string[] {"Північно льодовитий","Атлантичний","Індійський","Тихий"},//3
-        //new string[] {"57°C", "44°C", "39°C", "62°C"},      //4
-        //new string[] {"1801","1782","1539","1422"},  //5    
-        //new string[] {"Мехіко"},//6
-        //new string[] {"23","4","5","7"},//7
-        //new string[] {"Французька","Іспанська","Англійська","Італійська"},//8
-        //new string[] {"32%","12%","22,2%","16,5 %"},//9
-        //new string[] { "565 млн осіб", "142 млн осіб","651 млн осіб","1.2 млрд осіб"}//10
-        //};
-
-        ////Індекси питань, кнопки
-        //List<int> correctAnswers = new List<int>
-        //{
-        //1,//1
-        //0,//2
-        //2,//3
-        //0,//4
-        //2,//5
-        //0,//6
-        //0,//7
-        //2,//8
-        //3,//9
-        //0 //10
-
-        //};
 
         private int currentQuestionIndex = 0;
         private int currentBal = 0;
@@ -238,8 +186,7 @@ namespace Coursework
         {
             currentIndex = index;
             InitializeComponent();
-            Ques(currentIndex, ref questions, ref answerOptions, ref correctAnswers);
-            MessageBox.Show($"{questions.Count}, {answerOptions.Count}, {correctAnswers.Count}");
+            Ques(currentIndex, ref questions, ref answerOptions, ref correctAnswers, ref currentTest);
             LoadQuestion(currentQuestionIndex);
         }
 
@@ -319,10 +266,12 @@ namespace Coursework
                     if (selectAnsw == answerOptions[currentQuestionIndex][correctAnswers[currentQuestionIndex]])
                     {
                         currentBal++;
-                        MessageBox.Show("Відповідь правильна!", "Перевірка результатів");
+                        if(currentIndex != 0)
+                            MessageBox.Show("Відповідь правильна!", "Перевірка результатів");
                     }
                     else
-                        MessageBox.Show($"Відповідь неправильна!\nПравильна відповідь: {answerOptions[currentQuestionIndex][correctAnswers[currentQuestionIndex]]}","Перевірка результатів");
+                        if (currentIndex != 0)
+                            MessageBox.Show($"Відповідь неправильна!\nПравильна відповідь: {answerOptions[currentQuestionIndex][correctAnswers[currentQuestionIndex]]}","Перевірка результатів");
                 }
                 else
                 {
@@ -351,10 +300,12 @@ namespace Coursework
                 if (string.Equals(userAnswer.ToLower(), correctAnswer.ToLower(), StringComparison.OrdinalIgnoreCase))
                 {
                     currentBal++;
-                    MessageBox.Show("Відповідь правильна!", "Перевірка результатів");
+                    if (currentIndex != 0)
+                        MessageBox.Show("Відповідь правильна!", "Перевірка результатів");
                 }
                 else
-                    MessageBox.Show($"Відповідь неправильна.\nПравильна відповідь {correctAnswer}", "Перевірка результатів");
+                    if (currentIndex != 0)
+                        MessageBox.Show($"Відповідь неправильна.\nПравильна відповідь {correctAnswer}", "Перевірка результатів");
             }
 
             if (currentQuestionIndex == questions.Count - 1)
@@ -371,10 +322,10 @@ namespace Coursework
         private void ShowResults()
         {
             double percentageScore = (double)currentBal / questions.Count * 100;
-            string resoult = $"Результат: {currentBal}/{questions.Count} ({Math.Round(percentageScore)}%)";
+            string resoult = $"{currentTest}. Результат: {currentBal}/{questions.Count} ({Math.Round(percentageScore)}%)";
             if (enterForm.currentUser != null)
             {
-                File.AppendAllText("resoults.txt", "\n" + enterForm.currentUser + " " + resoult.ToLower());
+                File.AppendAllText("resoults.txt", "\n" + enterForm.currentUser + ". " + resoult);
                 if (MessageBox.Show(resoult, "Результат") == DialogResult.OK)
                 {
                     GoToMain();

@@ -118,13 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="rkeb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rkeb.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="South_America_(orthographic_projection).svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\South_America_(orthographic_projection).svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rkeb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rkeb1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="South_America_(orthographic_projection).svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\South_America_(orthographic_projection).svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rkeb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rkeb.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Greenland_(orthographic_projection).svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greenland_(orthographic_projection).svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
